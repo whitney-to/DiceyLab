@@ -15,25 +15,10 @@ public class Simulation {
         return numberOfDices;
     }
 
-    public void setNumberOfDices(int numberOfDices) {
-        this.numberOfDices = numberOfDices;
-    }
-
     public int getNumberOfTosses() {
         return numberOfTosses;
     }
 
-    public void setNumberOfTosses(int numberOfTosses) {
-        this.numberOfTosses = numberOfTosses;
-    }
-
-    public Dice getDice() {
-        return dice;
-    }
-
-    public void setDice(Dice dice) {
-        this.dice = dice;
-    }
 
     public void runSimulation() {
         for(int i = 1; i <= numberOfTosses; i++){
@@ -49,10 +34,10 @@ public class Simulation {
                 : dice.getBin().getBinsMap().entrySet()){
             double percentage = (double)tossResult.getValue()/numberOfTosses;
             System.out.format("%2d : %7d: %.2f %s\n",
-                    tossResult.getKey(),
-                    tossResult.getValue(),
-                    percentage,
-                    getAsterisk((int) (percentage*100)));
+                    tossResult.getKey(),    // bin #
+                    tossResult.getValue(),  // total number of times for a bin
+                    percentage,             // percent landing on the bin
+                    getAsterisk((int) (percentage*100)));   // asterisks based on percent
         }
     }
 

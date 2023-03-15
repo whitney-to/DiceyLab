@@ -1,8 +1,8 @@
 public class Dice {
-    int numberOfDies;
-    int lowest;
-    int highest;
-    Bins bin;
+    private int numberOfDies;
+    private int lowest;
+    private int highest;
+    private Bins bin;
 
     public Dice(int numberOfDies) {
         this.numberOfDies = numberOfDies;
